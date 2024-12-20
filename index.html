@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sizes">
+  <label>
+    <input type="radio" name="size" value="l" checked onchange='onChange(this)'>
+    Size L
+  </label>
+  <label>
+    <input type="radio" name="size" value="m" onchange='onChange(this)'>
+    Size M
+  </label>
+  <label>
+    <input type="radio" name="size" value="s" onchange='onChange(this)'>
+    Size S
+  </label>
+</div>
+<div class="card size_l" id="card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs8HosJN17s-a_NEpfO_B7sRbT7zZNRsBLGg&s" class="photo">
+  <div class="info">
+    <h3>Квартира-студия</h3>
+    <p>🗺Москва</p>
+    <p>🚇метро Царицыно</p>
+  </div>
+  <div class="price" contenteditable="true">
+    100.000 р/мес
+  </div>
+  <div class="description">
+    Комфортная студия 15 кв.м. в новом ЖК с видом на лес 
+  </div>
+  <div class="actions">
+    <button type="button">☎️</button>
+    <button type="button">❤️</button>
+  </div>
+  <div class="date" contenteditable="true">
+      <hr>
+ЖК "Лесной" группа ПИК
+  </div>
+</div>
+<script>
+function onChange(element) {
+  const card=document.getElementById('card');
+  card.classList.remove('size_l', 'size_m', 'size_s');
+  card.classList.add('size_' + element.value);
+}
+</script>
+</body>
