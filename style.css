@@ -1,0 +1,50 @@
+body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  grid-gap: 1rem 2rem;
+  align-items: baseline;
+  border: 1px solid rgb(233, 66, 66);
+  padding: 0.75rem;
+  transition: width 0.3s ease, grid-template-areas 0.3s ease;
+}
+
+.card.size_l {
+  width: 50rem;
+  grid-template-areas: 
+    'photo info price'
+    'photo desc desc'
+    'photo actions date';
+  grid-template-columns: 20rem 1fr max-content;
+}
+
+.card.size_m {
+  width: 35rem;
+  grid-template-areas: 
+    'photo photo'
+    'info price'
+    'info actions'
+    'desc desc';
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 20rem;
+}
+
+.card.size_s {
+  width: 20rem;
+  grid-template-areas: 
+    'photo'
+    'info';
+  grid-template-rows: 15rem;
+}
+
+.photo {
+  grid-area: photo;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
